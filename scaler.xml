@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.5" method="upgrade">
+ 
+	<name>Scaler</name>
+	<creationDate>July 2016</creationDate>
+	<author>David White</author>
+	<authorEmail>david@netriver.co.uk</authorEmail>
+	<authorUrl>http://netriver.co.uk/</authorUrl>
+	<copyright>2016 Netriver Systems Limited</copyright>
+	<license>All rights reserved</license>
+	<!-- The version number here must match that of the data model -->
+	<version>1.0.0</version>
+	<description>Image scaler component</description>
+	
+	<!-- A script to run on install, update or uninstall -->
+	<scriptfile>install.php</scriptfile>
+	
+    <install> <!-- Runs on install -->
+       <sql>
+          <file driver="mysqli" charset="utf8">sql/install.mysql.utf8.sql</file>
+          <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+       </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+       <sql>
+          <file driver="mysqli" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+          <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+       </sql>
+    </uninstall>
+
+	<update> <!-- Runs on update -->
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+ 
+	<!-- Site Main File Copy Section -->
+
+	<files folder="site">
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+		<folder>language</folder>
+		<folder>models</folder>
+		<folder>layouts</folder>
+		<folder>lib</folder>
+		<folder>views</folder>
+		<filename>index.html</filename>
+		<filename>scaler.php</filename>
+		<filename>router.php</filename>
+	</files>
+	
+	<administration>
+		<!-- Administration Main File Copy Section -->
+		<files folder="admin">
+			<!-- Admin Main File Copy Section -->
+			<folder>sql</folder>
+			<folder>language</folder>
+			<filename>config.xml</filename>
+			<filename>access.xml</filename>
+			<filename>index.html</filename>
+		</files>
+
+	</administration>
+ 
+</extension>

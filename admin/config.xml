@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset
+		name="basic"
+		label="COM_SCALER_CONFIG_BASIC_LABEL"
+		description="COM_SCALER_CONFIG_BASIC_DESC" >
+		<field
+			name="cache_enabled"
+			type="radio"
+			default="1"
+			class="btn-group"
+			label="COM_SCALER_CONFIG_USE_CACHE_LABEL"
+			description="COM_SCALER_CONFIG_USE_CACHE_DESC">
+    			<option value="1">On</option>
+   				<option value="0">Off</option>
+		</field>
+		
+		<field
+			name="cache_period"
+			type="number"
+			default="86400"
+			label="COM_SCALER_CONFIG_CACHE_LABEL_LABEL"
+			description="COM_SCALER_CONFIG_CACHE_LABEL_DESC"
+		/>
+		
+		<field
+			name="cdn_prefix"
+			type="text"
+			filter="url"
+			label="COM_SCALER_CONFIG_CDN_LABEL_LABEL"
+			description="COM_SCALER_CONFIG_CDN_LABEL_DESC"
+		/>
+		
+		<field
+			name="live_domain"
+			type="text"
+			filter="url"
+			label="COM_SCALER_CONFIG_LIVE_DOMAIN_LABEL_LABEL"
+			description="COM_SCALER_CONFIG_LIVE_DOMAIN_LABEL_DESC"
+		/>
+	</fieldset>
+</config>
